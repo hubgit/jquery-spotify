@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>jQuery Spotify demo</title>
+
+<link rel="stylesheet" href="../jquery.spotify.css">
+<link rel="stylesheet" href="demo.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://git.macropus.org/jquery-microdata/jquery.microdata.js"></script>
+<script src="http://git.macropus.org/jquery-ajax-queue/jquery.ajaxQueue.js"></script>
+
+<script src="../jquery.spotify.js"></script>
+<script src="demo.js"></script>
+
+<ol class="albumlist">
+	<li itemscope itemtype="http://schema.org/MusicAlbum">
+		<span itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+			<a itemprop="url" href="http://www.last.fm/music/Low">
+				<span itemprop="name">Low</span>
+			</a>
+		</span>
+		-
+		<a itemprop="url" href="http://www.last.fm/music/Low/The+Invisible+Way">
+			<span itemprop="name">The Invisible Way</span>
+		</a>
+	</li>
+	<li itemscope itemtype="http://schema.org/MusicAlbum">
+		<span itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+			<a itemprop="url" href="http://example.com">
+				<span itemprop="name">Failing Lookup</span>
+			</a>
+		</span>
+		-
+		<a itemprop="url" href="http://example.com">
+			<span itemprop="name">This Will Fail</span>
+		</a>
+	</li>
+	<li itemscope itemtype="http://schema.org/MusicAlbum">
+		<span itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+			<a itemprop="url" href="http://www.last.fm/music/Eluvium">
+				<span itemprop="name">Eluvium</span>
+			</a>
+		</span>
+		-
+		<a itemprop="url" href="http://www.last.fm/music/Eluvium/Nightmare+Ending">
+			<span itemprop="name">Nightmare Ending</span>
+		</a>
+	</li>
+	<li itemscope itemtype="http://schema.org/MusicAlbum">
+		<span itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+			<a itemprop="url" href="http://www.last.fm/music/Julianna+Barwick">
+				<span itemprop="name">Julianna Barwick</span>
+			</a>
+		</span>
+		-
+		<a itemprop="url" href="http://www.last.fm/music/Julianna+Barwick/Nepenthe">
+			<span itemprop="name">Nepenthe</span>
+		</a>
+	</li>
+	<li itemscope itemtype="http://schema.org/MusicAlbum">
+		<span itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+			<a itemprop="url" href="http://www.last.fm/music/Boards+Of+Canada">
+				<span itemprop="name">Boards Of Canada</span>
+			</a>
+		</span>
+		-
+		<a itemprop="url" href="http://www.last.fm/music/Boards+Of+Canada/Tomorrow%E2%80%99s+Harvest">
+			<span itemprop="name">Tomorrow’s Harvest</span>
+		</a>
+	</li>
+</ol>
