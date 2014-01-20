@@ -4,7 +4,7 @@ $(function() {
 
 		var albumName = node.microdata('name');
 		var artistName = node.microdata('byArtist').microdata('name');
-		var query = 'artist:' + encodeURIComponent(artistName) + ' album:' + encodeURIComponent(albumName);
+		var query = 'artist:' + artistName + ' album:' + albumName;
 
 		var status = $('<span/>').appendTo(node);
 
