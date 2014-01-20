@@ -8,13 +8,23 @@ $(function() {
 
 		var status = $('<span/>').appendTo(node);
 
-		var handleProgress = function(text) {
-			status.text(text);
+		var handleProgress = function(jqXHR, textStatus, item) {
+			var text;
+
+			switch (jqXHR.status) {
+				case 403:
+					status.text('Rate-limited, retrying in ' + Math.ceil(item.delay.rate/1000) + ' seconds');
+					break;
+
+				default:
+					status.text('Server error, retrying in ' + Math.ceil(item.delay.server/1000) + ' seconds');
+					break;
+			}
 		};
 
-		var handleFail = function(text) {
+		var handleFail = function(jqXHR, textStatus) {
 			if (typeof console == 'function') {
-				console.log(text);
+				console.log(jqXHR, textStatus);
 			}
 
 			status.remove();
