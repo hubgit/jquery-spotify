@@ -8,6 +8,18 @@ $(function() {
 
 		var status = $('<span/>').appendTo(node);
 
+		var handleProgress = function(text) {
+			status.text(text);
+		};
+
+		var handleFail = function(text) {
+			if (typeof console == 'function') {
+				console.log(text);
+			}
+
+			status.remove();
+		}
+
 		var request = $.spotify.search('album', query).done(function(data) {
 			if (data.albums.length) {
 				status.text('Fetching…');
@@ -17,13 +29,13 @@ $(function() {
 					$.spotify.link(data.album.href, '(' + data.album.released + ')').appendTo(node);
 				});
 
-				request.progress(status.text).fail(status.text);
+				request.progress(handleProgress).fail(handleFail);
 			} else {
 				status.remove();
 			}
 		});
 
-		request.progress(status.text).fail(status.text);
+		request.progress(handleProgress).fail(handleFail);
 
 	});
 })
