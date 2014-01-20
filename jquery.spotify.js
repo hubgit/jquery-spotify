@@ -22,7 +22,7 @@
  			return $.spotify.get('lookup/1/', data, true);
  		},
 
- 		get: function(path, data, priority, tries) {
+ 		get: function(path, data, priority) {
 			var params = {
 				url: 'http://ws.spotify.com/' + path,
 				data: data,
