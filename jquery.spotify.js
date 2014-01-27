@@ -11,12 +11,22 @@
  (function($) {
  	$.spotify = {
  		search: function(type, query, params) {
+ 			if (typeof query === 'object') {
+ 				query = $.map(query, function(value, key) {
+ 					return key + ':' + value;
+ 				}).join(' ');
+ 			}
+
  			var data = $.extend({ q: query }, params);
 
  			return $.spotify.get('search/1/' + type + '.json', data);
  		},
 
  		lookup: function(uri, params) {
+ 			if (typeof uri === 'object') {
+ 				uri = uri.href;
+ 			}
+
  			var data = $.extend({ uri: uri }, params);
 
  			return $.spotify.get('lookup/1/', data, { priority: true });

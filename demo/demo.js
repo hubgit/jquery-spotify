@@ -4,7 +4,7 @@ $(function() {
 
 		var albumName = node.microdata('name');
 		var artistName = node.microdata('byArtist').microdata('name');
-		var query = 'artist:' + artistName + ' album:' + albumName;
+		var query = { artist: artistName, album: albumName };
 
 		var status = $('<span/>').appendTo(node);
 
@@ -34,7 +34,7 @@ $(function() {
 			if (data.albums.length) {
 				status.text('Fetching…');
 
-				var request = $.spotify.lookup(data.albums[0].href, { extras: 'track' }).done(function(data) {
+				var request = $.spotify.lookup(data.albums[0], { extras: 'track' }).done(function(data) {
 					status.remove();
 					$.spotify.link(data.album.href, '(' + data.album.released + ')').appendTo(node);
 				});
