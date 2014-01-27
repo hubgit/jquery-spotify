@@ -25,24 +25,24 @@
  		get: function(path, data, options) {
  			options = $.extend({ tries: 3 }, options);
 
-			var params = {
-				url: 'http://ws.spotify.com/' + path,
-				data: data,
-				dataType: 'json',
-				cache: true,
-			};
+ 			var params = {
+ 				url: 'http://ws.spotify.com/' + path,
+ 				data: data,
+ 				dataType: 'json',
+ 				cache: true,
+ 			};
 
-			return $.ajaxQueue(params, options);
-		},
+ 			return $.ajaxQueue(params, options);
+ 		},
 
-		link: function(url, text) {
-	 		var options = {
-	 			href: url,
-	 			text: text,
-	 			title: 'Listen in Spotify',
-	 		};
+ 		link: function(url, text) {
+ 			var options = {
+ 				href: url,
+ 				text: text,
+ 				title: 'Listen in Spotify',
+ 			};
 
-	 		return $('<a/>', options).addClass('open-in-spotify');
-	 	}
+ 			return $('<a/>', options).addClass('open-in-spotify');
+ 		}
  	};
  })(jQuery);
