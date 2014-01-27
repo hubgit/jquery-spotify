@@ -10,7 +10,7 @@ Requires [jQuery Ajax Queue](https://github.com/hubgit/jquery-ajax-queue).
 
     $.spotify.search('The Beatles Yello Wubmarine'); // basic search
     
-    $.spotify.search('artist:The Beatles', { page: 2 }); // 2nd page of an artist search
+    $.spotify.search({ artist: 'The Beatles' }, { page: 2 }); // 2nd page of an artist search
     
     $.spotify.lookup('spotify:album:4BMYwbOZd1i9vraiSXtSkg', { extras: 'track' }); // retrieve metadata by URI
     
