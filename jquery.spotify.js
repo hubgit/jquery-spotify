@@ -33,7 +33,7 @@
  		},
 
  		get: function(path, data, options) {
- 			options = $.extend({ tries: 3 }, options);
+ 			options = $.extend({ tries: 3, limit: 100 }, options);
 
  			var params = {
  				url: 'http://ws.spotify.com/' + path,
